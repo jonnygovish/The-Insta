@@ -11,9 +11,9 @@ from django.core.urlresolvers import reverse
 @login_required(login_url='/accounts/login/')
 def index(request):
   # Only return posts from users that are being followed
-  users_followed = request.user.profile.following.all()
-  posts = Post.objects.filter(profile__in=users_followed).order_by('-posted_on')
-  return render(request,'index.html',{"posts":post})
+  posts = Post.objects.filter().all().order_by('-id')
+
+  return render(request,'index.html',{"posts":posts})
 
 @login_required
 @transaction.atomic
@@ -53,7 +53,7 @@ def followers(request, username):
 
   title = "Followers"
 
-  return render(request, 'followers.html', {"title": title, "profiles":profiles})
+  return render(request, 'follow_list.html', {"title": title, "profiles":profiles})
 
 def following(request, username):
   user = user = User.objects.get(username = username)
@@ -62,7 +62,7 @@ def following(request, username):
 
   title = "Following"
 
-  return render(request, 'following.html', {"title": title, "profiles":profiles})
+  return render(request, 'follow_list.html', {"title": title, "profiles":profiles})
 
 
 @login_required
