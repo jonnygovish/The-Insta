@@ -15,7 +15,7 @@ class Profile(models.Model):
   birth_date = models.DateField(null =True, blank = True)
   followers = models. ManyToManyField('Profile', related_name = 'followers_profile', blank =True)
   following = models. ManyToManyField('Profile', related_name='following_profile', blank =True)
-  profile_pic = ProcessedImageField(upload_to = 'profile_pic', options ={'quality':100}, null =True, blank = True)
+  profile_pic = models.ImageField(upload_to = 'profile_pic/', null =True, blank = True)
 
 
   @receiver(post_save,sender = User)
@@ -45,14 +45,14 @@ class Profile(models.Model):
 class Post(models.Model):
   profile = models.ForeignKey(Profile, null = True, blank = True)
   title = models.CharField(max_length = 100)
-  image = ProcessedImageField(upload_to = 'posts', options ={'quality':100}, format = 'JPEG')
+  image = models.ImageField(upload_to = 'posts/')
   posted_on = models.DateTimeField(auto_now_add=True)
 
   def get_number_of_likes(self):
     return self.like_set.count()
 
   def get_number_of_comments(self):
-    return comment_set.count()
+    return self.comment_set.count()
 
 
 class Comment(models.Model):
