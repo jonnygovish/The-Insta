@@ -23,7 +23,7 @@
                     <li><a href="{% url 'post_picture' %}"><i class="fa fa-upload {% active 'post_picture' %}" aria-hidden="true"></i></a></li>
                     <li><a href=""><i class="fa fa-heart-o {% active 'notifications' %}" aria-hidden="true"></i></a></li>
                     <li><a href="{% url 'profile' request.user.username %}"><i class="fa fa-user {% active 'profile' %}" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-inbox " aria-hidden="true"></i></a></li>
+                    <li><a href="/logout"><i class="fa fa-inbox " aria-hidden="true"></i></a></li>
                     <!--
                       Using profile page logout for now
                       <li><a href="">Signout</a></li>
