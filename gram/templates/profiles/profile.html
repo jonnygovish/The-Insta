@@ -28,7 +28,6 @@
             </div>
           {% elif request.user.is_authenticated %}
           <div class="follow-toggle__container">
-            {% is_following request.user.userprofile profile as following %}
             <button class="btn btn-primary {% if not following %}follow-user{% else %}unfollow-user{% endif %}" id="{{ profile.pk }}">
               {% if not following %}
                 Follow
@@ -84,7 +83,7 @@
       {% for post in profile.post_set.all reversed %}
         <div class="col-xs-4">
           <div class="picture-square" style="background-image: url({{ post.image.url }})">
-            <a href="{% url 'post' post.id %}">
+            <a href="{% url 'post' post.pk %}">
               <div class="content">
                 <i class="fa fa-heart" aria-hidden="true"></i> {{ post.get_number_of_likes }}
                 <i class="fa fa-comment" aria-hidden="true"></i> {{ post.get_number_of_comments }}

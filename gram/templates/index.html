@@ -9,7 +9,7 @@
                 <div class="card view-update {{ post.pk }}">
                     <div class="card__panel-head">
                         <div class="poster__info">
-                            <a href="{% url 'profile' post.user.username %}" class="poster__name">
+                            <a href="{% url 'profile' post.profile.user.username %}" class="poster__name">
                               {% if post.profile.profile_pic %}
                                 <img class="poster__profilepic" src="{{ post.profile.profile_pic.url }}">
                               {% else %}

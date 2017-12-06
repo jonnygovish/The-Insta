@@ -5,7 +5,7 @@
 {% block content %}
 <div class="follow__wrapper row">
   <div class="follow__heading">
-    {{ header }}
+    {{ title }}
   </div>
   {% for profile in profiles %}
     <div class="follow__card" id="{{ profile.pk }}">
@@ -18,7 +18,6 @@
 
       {% if request.user.is_authenticated and profile != request.user.userprofile %}
         <div class="follow-toggle__container">
-          {% is_following request.user.userprofile profile as following %}
           <button class="btn btn-primary {% if not following %}follow-user{% else %}unfollow-user{% endif %}">
             {% if not following %}
               Follow

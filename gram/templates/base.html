@@ -11,7 +11,6 @@
   <title>The Gram</title>
   {% block styles%}
     {% bootstrap_css%}
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
 </head>
 <body>
@@ -25,7 +24,9 @@
     </div>
 
     {% block scripts %}
-    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ajax-csrf-auth.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
     {% bootstrap_javascript %}
     {% endblock %}
   

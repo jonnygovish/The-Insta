@@ -6,7 +6,7 @@
 <div class="row single-post">
   <div class="single-post-card view-update {{ post.pk }}">
     <div class="header">
-      <a href="{% url 'profile' post.user_profile.user.username %}">
+      <a href="{% url 'profile' post.profile.user.username %}">
         {% if post.profile.profile_pic %}
           <img class="picture-circle--medium" src="{{ post.profile.profile_pic.url }}">
         {% else %}
