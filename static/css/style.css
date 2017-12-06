@@ -117,83 +117,7 @@ a:hover {
     .mobile-block {
       display: block; } }
 
-#messages {
-  max-width: 600px;
-  margin: 0 auto; }
-  #messages .back-button {
-    color: #333;
-    margin-top: 10px;
-    font-size: 20px; }
 
-.message {
-  position: relative; }
-  .message:not(:last-of-type) {
-    border-bottom: 1px solid #ccc; }
-  .message .message-info {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 10px; }
-    .message .message-info .username, .message .message-info .text {
-      margin: 0; }
-    .message .message-info .username {
-      color: #333; }
-    .message .message-info .text {
-      color: #ccc; }
-  .message .timestamp {
-    position: absolute;
-    top: 14px;
-    right: 5px;
-    color: #333; }
-
-.message-sent, .message-received {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 4px;
-  max-width: 75%;
-  margin: 15px auto; }
-
-.message-sent {
-  text-align: right;
-  margin-left: 25%;
-  background: #f3f3f3; }
-
-.message-received {
-  position: relative;
-  margin-right: 25%;
-  margin-top: 30px; }
-  .message-received .sender {
-    position: absolute;
-    top: -18px;
-    left: 0;
-    color: #999;
-    font-size: 12px; }
-
-#chatForm {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  text-align: center; }
-  #chatForm input {
-    width: 100%;
-    max-width: 600px;
-    padding: 15px;
-    border: none;
-    border-top: 1px solid #ccc; }
-
-.controls {
-  background: #fff; }
-  .controls .right {
-    text-align: right; }
-  .controls a {
-    color: #333; }
-  .controls .new-message {
-    font-size: 25px; }
-    .controls .new-message .fa {
-      padding: 15px; }
-  @media (max-width: 768px) {
-    .controls.desktop {
-      display: none; } }
 
 .navbar {
   background-color: #fff;
@@ -580,4 +504,6 @@ a:hover {
 #explore > .col-xs-4, #explore > .col-sm-3 {
   padding: 0; }
 
-/*# sourceMappingURL=style.css.map */
+#post_picture{
+  padding-top: 15px;
+}
