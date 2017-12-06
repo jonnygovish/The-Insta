@@ -13,8 +13,8 @@ class Profile(models.Model):
   phone_number = models.IntegerField(blank =True, null = True)
   location = models.CharField(max_length = 30, blank =True)
   birth_date = models.DateField(null =True, blank = True)
-  followers = models. ManyToManyField('Profile', related_name = 'followers_profile', blank =True)
-  following = models. ManyToManyField('Profile', related_name='following_profile', blank =True)
+  followers = models.ManyToManyField('Profile', related_name = 'followers_profile', blank =True)
+  following = models.ManyToManyField('Profile', related_name='following_profile', blank =True)
   profile_pic = models.ImageField(upload_to = 'profile_pic/', null =True, blank = True)
 
 
@@ -39,7 +39,7 @@ class Profile(models.Model):
     else:
       return 0
   def __str__(self):
-    return self.User.username
+    return self.user.username
 
 
 class Post(models.Model):
